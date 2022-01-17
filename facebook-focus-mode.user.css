@@ -1,0 +1,125 @@
+/* ==UserStyle==
+@name         Facebook Focus Mode
+@version      20220117.07.39
+@namespace    userstyles.world/user/macx
+@description  Focus-Mode for Facebook on Desktop websites
+@author       macx
+@license      MIT
+@homepageURL    https://github.com/macx/Facebook-Focus-Mode
+@supportURL     https://github.com/macx/Facebook-Focus-Mode/issues
+@updateURL      https://raw.githubusercontent.com/macx/Facebook-Focus-Mode/main/facebook-focus-mode.user.css
+
+==/UserStyle== */
+
+@-moz-document domain("facebook.com") {
+  /* facebook.com*/
+
+  /*
+  ┌──────────────────────────────────┐
+    NAV BAR
+  └──────────────────────────────────┘
+  */
+
+  /* Set size of Navbar icons */
+  [aria-label='Facebook'] svg {
+    width: 24px;
+  }
+
+  [fill='url(#jsc_s_27)'] {
+    margin-left: 5px;
+  }
+
+  /* Remove background from icons */
+  .tdjehn4e {
+    background: none;
+  }
+
+  /*
+  ┌──────────────────────────────────┐
+    CONTENT STAGE
+  └──────────────────────────────────┘
+  */
+
+  /* Enlarge content width */
+  [data-pagelet='stories'],
+  .abvwweq7.abvwweq7 {
+    width: 680px;
+  }
+
+  /* Hide Rooms functions entierly */
+  [data-pagelet='VideoChatHomeUnit'] {
+    display: none;
+  }
+
+  /*
+  ┌──────────────────────────────────┐
+    SIDEBARS
+  └──────────────────────────────────┘
+  */
+
+  /* Hide Sidebars */
+  html:not(._9t1d) [role='banner'] ~ div [role='navigation'],
+  html:not(._9t1d) [role='banner'] ~ div [role='complementary'] {
+    flex: 0 1 280px;
+    background-color: rgba(0, 0, 0, 0.1);
+    opacity: 0.08;
+    transition: opacity 120ms ease-in-out;
+    filter: blur(10px);
+  }
+
+  html:not(._9t1d) [role='banner'] ~ div [role='navigation']:hover,
+  html:not(._9t1d) [role='banner'] ~ div [role='complementary']:hover {
+    opacity: 1;
+    background-color: var(--nav-bar-background);
+    box-shadow: 0 12px 12px var(--shadow-2), inset 0 0 0 0 var(--shadow-inset);
+    filter: none;
+  }
+
+  /* Make icons and spacing smaller */
+
+  .nddp3pr2.nddp3pr2 {
+    transform: scale(0.77777777);
+  }
+
+  .hx8drtub.hx8drtub {
+    margin-top: 4px;
+  }
+
+  .j13r6fgp.j13r6fgp {
+    margin-bottom: 4px;
+  }
+
+  .icc0peqn.icc0peqn {
+    margin-left: -4px;
+  }
+
+  .m6uieof3.m6uieof3 {
+    margin-right: 6px;
+  }
+
+  /* Remove top ad */
+  [data-pagelet='RightRail'] .sponsored_ad,
+  [data-pagelet='RightRail'] .l9j0dhe7 > div > span {
+    display: none;
+  }
+
+  /* Set icon size */
+  .nddp3pr2.nddp3pr2 {
+    transform: scale(0.77777777);
+  }
+
+  /* Hide Scrollbars */
+  .oj68ptkr {
+    display: none;
+  }
+
+  /* Hide Search until hover */
+  .poy2od1o .b3i9ofy5 {
+    opacity: 0;
+    transition: opacity 200ms ease-in-out;
+  }
+
+  .poy2od1o:hover .b3i9ofy5 {
+    opacity: 1;
+  }
+}
